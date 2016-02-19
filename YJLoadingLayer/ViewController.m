@@ -24,7 +24,7 @@
     
     CALayer *block = [CALayer layer];
     CGFloat wh = 6;
-    block.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 255.0 green:arc4random() % 256 / 255.0 blue:arc4random() % 256 / 255.0 alpha:1.0].CGColor;
+    block.backgroundColor = [UIColor orangeColor].CGColor;
     block.bounds = CGRectMake(0, 0, wh, wh);
     block.position = CGPointMake(30, 10);
     block.cornerRadius = wh / 2;
@@ -35,7 +35,7 @@
     CGFloat duration = 1;
     loadingLayer.instanceCount = count;
     loadingLayer.instanceTransform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0);
-    loadingLayer.instanceDelay = duration / 7;
+    loadingLayer.instanceDelay = duration / count;
     
     CABasicAnimation *shrink = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     shrink.fromValue = @(1.0);
